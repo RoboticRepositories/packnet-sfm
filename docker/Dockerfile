@@ -5,8 +5,8 @@ FROM nvidia/cuda:10.2-devel-ubuntu18.04
 ENV PROJECT=packnet-sfm
 ENV PYTORCH_VERSION=1.8.1
 ENV TORCHVISION_VERSION=0.9.1
-ENV CUDNN_VERSION=7.6.5.32-1+cuda10.2
-ENV NCCL_VERSION=2.7.8-1+cuda10.2
+ENV CUDNN_VERSION=8.0.5.39-1+cuda10.2
+ENV NCCL_VERSION=2.8.4-1+cuda10.2
 ENV HOROVOD_VERSION=65de4c961d1e5ad2828f2f6c4329072834f27661
 ENV TRT_VERSION=6.0.1.5
 ENV LC_ALL=C.UTF-8
@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y --allow-downgrades --allow-change-held-
     vim \
     wget \
     ca-certificates \
-    libcudnn7=${CUDNN_VERSION} \
+    libcudnn8=${CUDNN_VERSION} \
     libnccl2=${NCCL_VERSION} \
     libnccl-dev=${NCCL_VERSION} \
     libjpeg-dev \
